@@ -12,20 +12,11 @@
 			 on ${new Date().toLocaleString("en-US")}</strong>`;
 		});
 	</script>
-    <style>
-        p {
-            font-size: 0.5em;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="style/index.css">
 </head>
 
 <body>
     <header>
-        <hgroup>
-            <h1>Royce Huang</h1>
-        </hgroup>
-        <h2>Welcome to my <i>portfolio.</i></h2>
-        
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -36,15 +27,27 @@
             </ul>
         </nav>
     </header>
-    
     <main>
+        <h1>Royce Huang</h1>
+        <h2><i>Welcome to my portfolio.</i>
+            <hr></h2>
+        
         <section id="home">
-            <p>This is a quick glance at my <b>work</b> and experience.</p>
-            <br>
             <figure>
-                <img src="profile.jpg" alt="Profile Picture">
-                <figcaption>My Profile Picture</figcaption>
+                <picture>
+                    <img src="images/profilephoto.jpg" 
+                         alt="Royce Huang - Profile Picture" 
+                         width="320" height="400">
+                </picture>
             </figure>
+            <p id="info">
+                Hello! My name is Royce Huang, a BS/MS student at UC San Diego studying 
+                <b>Computer Engineering</b> with an expected graduation of June 2026. 
+                <br>
+                <br>
+                I am an upcoming intern at Arista Networks as a Platform Software Intern and am 
+                interested in learning new things and leveraging the skills I have to innovate.
+            </p>
         </section>
         <noscript>
             <p><em>JAVASCRIPT DISABLED</em></p>
