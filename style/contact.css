@@ -121,16 +121,6 @@
         resize: vertical;
     }
 
-    .error {
-        color: red;
-        font-size: 0.9rem;
-        margin-top: -0.5rem;
-    }
-    .info {
-        color: gray;
-        font-size: 0.9rem;
-    }
-
     button {
         background: var(--primary-color);
         color: white;
@@ -144,6 +134,26 @@
 
     button:hover {
         background: color-mix(in srgb, var(--primary-color), black 20%);
+    }
+    output {
+        display: block;
+        font-size: 0.9rem;
+        color: #333;
+        min-height: 1.2rem;
+        margin-top: 0.5rem;
+    }
+    .error-message {
+        color: red;
+        display: block;
+        font-size: 0.875rem;
+        margin-top: 0.25rem;
+    }
+    
+    .info-message {
+    color: green;
+    display: block;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
     }
 
 }
