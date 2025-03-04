@@ -8,6 +8,10 @@
     --font-main: 'Georgia', sans-serif;
     --font-size-base: 1rem;
 }
+[data-theme="dark"] {
+    --background-color: #121212;
+    --text-color: #ffffff;
+}
 /* 🖼 Base Styles */
 @layer base {
     body {
@@ -54,6 +58,21 @@
     
     nav a:hover {
         color: color-mix(in srgb, var(--primary-color), white 50%);
+    }
+    body {
+        background-color: var(--background-color);
+        color: var(--text-color);
+        transition: background-color 0.3s, color 0.3s;
+    }
+    #theme-toggle {
+        top: 15%;
+        right: 3rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 3;
+        color: var(--text-color);
+        font-family: var(--font-main, Arial, sans-serif);
     }
     
 }
@@ -165,5 +184,8 @@ footer {
     }
     img {
         width: 50%;
+    }
+    #theme-toggle {
+        top: 30%;
     }
 }

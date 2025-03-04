@@ -4,14 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | Portfolio</title>
-    <script>
-		window.addEventListener('load', function () {
-			let time = window.performance.timing,
-				complete = time.domComplete - time.domLoading;
-			document.getElementById('page-load-info').innerHTML = `<strong>Page Loaded in ${parseInt(complete)}ms
-			 on ${new Date().toLocaleString("en-US")}</strong>`;
-		});
-	</script>
+    <script src="scripts/main.js"></script>
     <link rel="stylesheet" type="text/css" href="style/index.css">
 </head>
 
@@ -24,6 +17,9 @@
                 <li><a href="experience.html">Experience</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="contact.html">Contact Me</a></li>
+                <button id="theme-toggle" aria-label="Toggle dark/light mode">
+                    <span id="theme-icon"> theme ○</span>
+                </button>
             </ul>
         </nav>
     </header>
@@ -31,7 +27,6 @@
         <h1>Royce Huang</h1>
         <h2><i>Welcome to my portfolio.</i>
             <hr></h2>
-        
         <section id="home">
             <figure>
                 <picture>
@@ -50,8 +45,19 @@
             </p>
         </section>
         <noscript>
-            <p><em>JAVASCRIPT DISABLED</em></p>
-        </noscript>
+            <style>
+              #theme-toggle {
+                display: none;
+              }
+              body::after {
+                content: "Theme switching requires JavaScript.";
+                display: block;
+                text-align: center;
+                margin-top: 1rem;
+                color: red;
+              }
+            </style>
+          </noscript>          
     </main>
     
     <footer>

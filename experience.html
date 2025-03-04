@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Experience | Portfolio</title>
+    <script src="scripts/main.js"></script>
     <link rel="stylesheet" type="text/css" href="style/experience.css">
 </head>
 <body>
@@ -15,6 +16,9 @@
                 <li><a href="experience.html">Experience</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="contact.html">Contact Me</a></li>
+                <button id="theme-toggle" aria-label="Toggle dark/light mode">
+                    <span id="theme-icon"> theme ○</span>
+                </button>
             </ul>
         </nav>
     </header>
@@ -43,6 +47,20 @@
                 </ul>
             </div>
         </section>
+        <noscript>
+            <style>
+              #theme-toggle {
+                display: none;
+              }
+              body::after {
+                content: "Theme switching requires JavaScript.";
+                display: block;
+                text-align: center;
+                margin-top: 1rem;
+                color: red;
+              }
+            </style>
+          </noscript>  
     </main>
     
     <footer>
