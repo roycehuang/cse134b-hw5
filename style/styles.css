@@ -36,7 +36,7 @@ header {
     position: sticky;
     top: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 1;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -65,9 +65,12 @@ nav a:hover {
 }
 
 #theme-toggle {
-    top: 15%;
-    right: 3rem;
+    top: 4%;
+    right: 2%;
+    font-size: 3em;
+    padding: 0;
     background: none;
+    position:absolute;
     border: none;
     cursor: pointer;
     z-index: 3;
@@ -193,6 +196,7 @@ footer {
         width: 50%;
     }
     #theme-toggle {
-        top: 30%;
+        top: 5%;
+        right: 5%;
     }
 }

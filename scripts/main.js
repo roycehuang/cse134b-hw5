@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Check localStorage for the saved theme
     const savedTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', savedTheme);
-    themeIcon.textContent = savedTheme === 'dark' ? 'theme ●' : 'theme ○';
+    themeIcon.textContent = savedTheme === 'dark' ? '●' : '●';
 
     // Toggle theme on button click
     themeToggle.addEventListener('click', () => {
@@ -13,6 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const newTheme = currentTheme === 'light' ? 'dark' : 'light';
         document.documentElement.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
-        themeIcon.textContent = newTheme === 'dark' ? 'theme ●' : 'theme ○';
+        themeIcon.textContent = newTheme === 'dark' ? '●' : ' ●';
     });
 });
