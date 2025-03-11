@@ -21,6 +21,11 @@ body {
     padding: 0;
     transition: background-color 0.3s, color 0.3s;
 }
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
 
 /* navigation bar */
 header {
@@ -76,7 +81,7 @@ main {
     flex-direction: column;
     align-items: center;
     padding: 4dvh 5%;
-    flex: 1;
+    flex-grow: 1;
 }
 
 section {
