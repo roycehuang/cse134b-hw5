@@ -7,15 +7,21 @@
     <script src="../scripts/main.js"></script>
     <link rel="stylesheet" type="text/css" href="../style/styles.css">
     <style>
-        section {
-            text-align: left;
-            max-width: 800px;
-            display: flex;
-            justify-content: space-between;
+        #projects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 20px;
+            justify-items: center;
         }
-        p#info{
-            padding: 2em;
-            margin-top: 5em;
+
+        section {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 50%;
+            margin: 0 auto 20px;
+            padding-top: 10px;
         }
     </style>
 </head>
@@ -34,25 +40,17 @@
             </ul>
         </nav>
     </header>
-    
+
     <main>
         <h1>Projects</h1>
         <section>
-            <div id="proj">
-                <a href="#">Project 1</a>
-                <span> Jan 2023 - Feb 2024 <br> 
-                    <ul>
-                        <li>
-                            deployed a <strong>webapp</strong> with <code>MERN</code> stack
-                        </li>
-                    </ul>
-                </span>
-                
-            </div>
-            <div id="proj">
-                <a href="#">Project 2</a>
-            </div>
+            <button id="loadLocal">Load Local</button>
+            <button id="loadRemote">Load Remote</button>
         </section>
+        <div id="projects">
+        </div>
+        <script type="module" src="../scripts/project-card.js"></script>
+        <script src="../scripts/project.js"></script>
         <noscript>
             <style>
               #theme-toggle {
