@@ -13,22 +13,22 @@ class ProjectCard extends HTMLElement {
         const title = this.getAttribute('title') || 'Unknown Title';
         const description = this.getAttribute('description') || 'Unknown Description';
         const imageUrl = this.getAttribute('imageUrl') || '';
+        const altImg = this.getAttribute('altImg') || '';
         const link = this.getAttribute('link') || '#';
 
         // Template for component content
-        this.shadowRoot.innerHTML = '';
-        this.shadowRoot.appendChild(style);
-        this.shadowRoot.innerHTML += `
+        this.shadowRoot.innerHTML = `
             <div class="simple-card">
                 <h2>${title}</h2>
                 <picture>
+                    <source srcset=${altImg} media="(max-width: 600px)" />
                     <img src=${imageUrl} alt="${title} Image"/>
                 </picture>
                 <p>${description}</p>
-                <a target="_blank" >Learn More</a>
+                <a target="_blank" href="${link}">Learn More</a>
             </div>
         `;
-
+        this.shadowRoot.appendChild(style);
     }
 }
 

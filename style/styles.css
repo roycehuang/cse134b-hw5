@@ -21,7 +21,7 @@ body {
     font-size: var(--font-size-base, 1rem);
     color: var(--text-color, #000);
     background-color: var(--background-color, #fff);
-    
+
     margin: 0;
     padding: 0;
     transition: var(--background-color) 0.3s, color 0.3s;
@@ -133,7 +133,7 @@ img {
 img:hover {
     transform: scale(1.05);
 }
-    
+
 /* Buttons */
 button {
     background: var(--primary-color);

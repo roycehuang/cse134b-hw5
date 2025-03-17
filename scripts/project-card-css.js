@@ -26,8 +26,18 @@ export function getMyComponentCSS() {
                 color: var(--text-color);
             }
 
-            picture img {
+            picture {
+                display: block;
                 width: 100%;
+                height: 200px; /* Fixed height for all images */
+                overflow: hidden; /* Prevents overflow if image aspect ratio differs */
+            }
+
+            picture img, picture source {
+                width: 100%;
+                height: 100%;
+                object-fit: cover; /* This is the key property */
+                object-position: center; /* Centers the image */
                 border-radius: 4px;
             }
 
