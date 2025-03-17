@@ -1,6 +1,4 @@
-// Modified version of contact.js with EmailJS integration
 let form_errors = [];
-
 function validateForm(event) {
     event.preventDefault();
 
@@ -28,63 +26,20 @@ function validateForm(event) {
 
         return false; // Prevent form submission if there are errors
     }
+    // Serialize errors into the hidden input field (empty if no errors)
+    // document.getElementById("form-errors").value = JSON.stringify(form_errors);
 
-    // If validation passes, send email using EmailJS
-    sendEmail(nameField.value, emailField.value, messageField.value);
-    
-    return false; // Prevent the default form submission
-}
+    // infoOutput.textContent = "Form submitted successfully!";
+    // // infoOutput.classList.remove("hidden");
 
-// New function to send email using EmailJS
-function sendEmail(name, email, message) {
-    // Show loading state
-    const submitButton = document.querySelector('button[type="submit"]');
-    const originalButtonText = submitButton.textContent;
-    submitButton.disabled = true;
-    submitButton.textContent = "Sending...";
-    
-    const infoMessage = document.getElementById("info-message");
-    infoMessage.textContent = "Sending your message...";
-    infoMessage.className = "";
+    // Serialize form_errors to a hidden input field before submission
+    const errorsInput = document.createElement("input");
+    errorsInput.type = "hidden";
+    errorsInput.name = "form-errors";
+    errorsInput.value = JSON.stringify(form_errors);
+    event.target.appendChild(errorsInput);
 
-    // Prepare template parameters
-    const templateParams = {
-        from_name: name,
-        reply_to: email,
-        message: message
-    };
-    
-    // Send email using EmailJS
-    emailjs.send("service_sp9kkg9", "template_ubfnhn6", templateParams)
-        .then(function(response) {
-            console.log("SUCCESS!", response.status, response.text);
-            
-            // Show success message
-            infoMessage.textContent = "Your message has been sent successfully!";
-            infoMessage.className = "success";
-            
-            // Reset form
-            document.querySelector('form').reset();
-            
-            // Record successful submission (if needed)
-            // You could send this to analytics or your backend
-        })
-        .catch(function(error) {
-            console.error("FAILED...", error);
-            
-            // Show error message
-            const errorOutput = document.getElementById("error-message");
-            errorOutput.textContent = "Failed to send message. Please try again later.";
-            errorOutput.classList.remove("hidden");
-            
-            // Record error for debugging
-            recordError("email-service", "sending-failed", JSON.stringify(error));
-        })
-        .finally(function() {
-            // Re-enable the submit button
-            submitButton.disabled = false;
-            submitButton.textContent = originalButtonText;
-        });
+    event.target.submit();  // Proceed with the form submission
 }
 
 function validateField(field, regex, errorMessage) {
@@ -164,10 +119,10 @@ function updateCharCount(textarea) {
             infoMessage.className = "warning"; // Less critical state
         } else {
             infoMessage.className = ""; // Normal state
+            
         }
     });
 }
-
 function recordError(fieldName, errorType, inputValue) {
     if (!inputValue || inputValue === "undefined") return; // Avoid logging undefined values
     form_errors.push({
@@ -176,7 +131,6 @@ function recordError(fieldName, errorType, inputValue) {
         input: inputValue,
     });
 }
-
 function resetValidationState() {
     const inputs = document.querySelectorAll("input, textarea");
     

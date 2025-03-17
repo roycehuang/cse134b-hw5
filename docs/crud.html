@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Data Management | Portfolio</title>
+    <script src="../scripts/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="../style/styles.css">
+    <link rel="stylesheet" type="text/css" href="../style/crud.css">
+    <style>
+        .info {
+            background-color: rgba(0, 123, 255, 0.2);
+            border: 1px solid #007bff;
+        }
+        #saveRemoteBtn {
+            background-color: #17a2b8;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact Me</a></li>
+                <li><a href="crud.html">Manage Projects</a></li>
+                <button id="theme-toggle" aria-label="Toggle dark/light mode">
+                    <span id="theme-icon">○</span>
+                </button>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Project Data Management</h1>
+        
+        <section class="data-source-controls">
+            <button id="loadLocalBtn">Load from Local Storage</button>
+            <button id="loadRemoteBtn">Load from Remote</button>
+            <button id="saveLocalBtn">Save to Local Storage</button>
+            <button id="saveRemoteBtn">Save to Remote</button>
+        </section>
+
+        <section class="project-management">
+            <div class="project-list">
+                <h2>Project List</h2>
+                <div id="projectsList"></div>
+            </div>
+
+            <div class="project-form">
+                <h2 id="formTitle">Add New Project</h2>
+                <form id="projectForm">
+                    <input type="hidden" id="projectId">
+                    
+                    <div class="form-group">
+                        <label for="title">Project Title:</label>
+                        <input type="text" id="title" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Description:</label>
+                        <textarea id="description" rows="4" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="imageUrl">Image URL:</label>
+                        <input type="url" id="imageUrl" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="altImg">Alternative Image URL:</label>
+                        <input type="url" id="altImg">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="link">Project Link:</label>
+                        <input type="url" id="link" required>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" id="saveBtn">Save Project</button>
+                        <button type="button" id="cancelBtn">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>Royce Huang Portfolio</p>
+    </footer>
+
+    <script type="module" src="../scripts/project-card.js"></script>
+    <script src="../scripts/crud.js"></script>
+    <noscript>
+        <style>
+          #theme-toggle {
+            display: none;
+          }
+          body::after {
+            content: "Theme switching requires JavaScript.";
+            display: block;
+            text-align: center;
+            margin-top: 1rem;
+            color: red;
+          }
+        </style>
+    </noscript>
+</body>
+</html>

@@ -1,0 +1,125 @@
+.data-source-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+.project-management {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+.project-list {
+    background-color: var(--form-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px var(--shadow);
+}
+#projectsList {
+    max-height: 80%;
+    overflow-y: auto;
+}
+.project-item {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.project-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.project-item-title {
+    font-weight: bold;
+    flex-grow: 1;
+}
+.project-item-actions {
+    display: flex;
+    gap: 5px;
+}
+.edit-btn, .delete-btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.edit-btn {
+    background-color: var(--primary-color);
+    color: white;
+}
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
+}
+.project-form {
+    background-color: var(--form-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px var(--shadow);
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+.form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+#cancelBtn {
+    background-color: #6c757d;
+}
+#saveRemoteBtn {
+    background-color: #17a2b8;
+    background-color: #17a2b8;
+    color: white;
+}
+.status-message {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    text-align: center;
+}
+.success {
+    background-color: rgba(40, 167, 69, 0.2);
+    border: 1px solid #28a745;
+}
+.error {
+    background-color: rgba(220, 53, 69, 0.2);
+    border: 1px solid #dc3545;
+}
+.info {
+    background-color: rgba(0, 123, 255, 0.2);
+    border: 1px solid #007bff;
+}
+/* Responsive design */
+@media (max-width: 768px) {
+    .project-management {
+        grid-template-columns: 1fr;
+    }
+    
+    .data-source-controls {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .data-source-controls button {
+        width: 80%;
+    }
+}

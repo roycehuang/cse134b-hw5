@@ -6,13 +6,46 @@
     <title>Contact Me | Portfolio</title>
     <script src="../scripts/main.js"></script>
     <!-- <link rel="stylesheet" type="text/css" href="../style/styles.css"> -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../style/contact.css">
     <style>
         section {
             width: 100%;     
             display: inline;   
         }
+        .success {
+            color: green;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #e8f5e9;
+            border-radius: 4px;
+        }
+        .error {
+            color: red;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #ffebee;
+            border-radius: 4px;
+        }
+        .warning {
+            color: #ff9800;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #fff3e0;
+            border-radius: 4px;
+        }
+        .hidden {
+            display: none;
+        }
     </style>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init({
+              publicKey: "ezpnL22wceLkfTv-i",
+            });
+        })();
+    </script>
     <script src="../scripts/contact.js"></script>
 </head>
 <body>
@@ -34,7 +67,7 @@
     <main>
         <section>
             <h1>Contact Me</h1>
-            <form onsubmit="return validateForm(event);" action="https://httpbin.org/post" method="POST">
+            <form id="contact-form"onsubmit="return validateForm(event);">
                 <fieldset>
                     <legend>Get in Touch</legend>
 
@@ -50,10 +83,10 @@
                             title="Please enter a valid email address.">
                     <label for="message">Message:</label>
                     <textarea id="message" name="message" required minlength="10" 
-                            maxlength="200" pattern="^[a-zA-Z0-9\s.,!?'- ]+$" 
+                            maxlength="200" rows="5" pattern="^[a-zA-Z0-9\s.,!?'- ]+$" 
                             title="Only letters, numbers, spaces, and common punctuation are allowed."></textarea>
 
-                    <output id="error-message"></output>
+                    <output id="error-message" class="hidden"></output>
                     <output id="info-message"></output>
 
                     <input type="hidden" name="possible_bot" value="true">
